@@ -1,0 +1,586 @@
+                                                                                
+                                                                                
+             -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --             
+                                                                                
+                     Version 12.0.23 modifiée le 31/08/2016                     
+                     révision 1f0af493 - branche 'default'                      
+                         Copyright EDF R&D 1991 - 2016                          
+                                                                                
+                    Exécution du : Tue Oct 11 18:48:19 2016                     
+                   Nom de la machine : mbgnktc2-OptiPlex-9010                   
+                              Architecture : 64bit                              
+                          Type de processeur : x86_64                           
+                Système d'exploitation : Linux 3.13.0-85-generic                
+                        Langue des messages : en (UTF-8)                        
+                                                                                
+                           Version de Python : 2.7.6                            
+                            Version de NumPy : 1.8.2                            
+                           Parallélisme MPI : inactif                           
+                          Parallélisme OpenMP : actif                           
+                        Nombre de processus utilisés : 7                        
+                     Version de la librairie HDF5 : 1.8.10                      
+                      Version de la librairie MED : 3.0.8                       
+                     Version de la librairie MUMPS : 4.10.0                     
+                    Version de la librairie SCOTCH : 5.1.10                     
+                 Mémoire limite pour l'exécution : 13250.00 Mo                  
+                    consommée par l'initialisation : 0.00 Mo                    
+                  par les objets du jeu de commandes : 0.00 Mo                  
+                reste pour l'allocation dynamique : 12828.76 Mo                 
+                Taille limite des fichiers d'échange : 97.66 Go                 
+                                                                                
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (448.9) atteint une valeur supérieure à 50% du temps CPU (272.2). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  7.04042E-01
+  7.02691E-01
+  7.01337E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 18:51:32 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  1.99700E+00 -3.34108E-02  3.34252E-03  7.97378E-05  3.34392E-02  1.19607E-04
+            1            2  1.10000E-05            2  2.00000E+00  9.98498E-01 -1.67054E-02  1.67126E-03  3.98689E-05  3.34392E-02  2.99017E-05
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.87065E-01
+  1.87533E-01
+  1.88001E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 18:51:38 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  5.22624E-01 -9.93036E-03 -1.04478E-03  5.46071E-06  3.79700E-02  8.19106E-06
+            1            2  1.10000E-05            2  2.00000E+00  2.61312E-01 -4.96518E-03 -5.22389E-04  2.73035E-06  3.79700E-02  2.04777E-06
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (737.9) atteint une valeur supérieure à 50% du temps CPU (626.1). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.29606E+00
+  3.29473E+00
+  3.29341E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 19:00:26 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  1.11203E+01 -7.65228E-02  4.51460E-02  2.47327E-03  1.37613E-02  3.70991E-03
+            1            2  1.40000E-05            2  2.00000E+00  5.56013E+00 -3.82614E-02  2.25730E-02  1.23664E-03  1.37613E-02  9.27476E-04
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.46333E+00
+  3.46481E+00
+  3.46629E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 19:00:32 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  1.04930E+01 -2.41561E-01 -1.41854E-02  2.20322E-03  4.59856E-02  3.30483E-03
+            1            2  1.40000E-05            2  2.00000E+00  5.24650E+00 -1.20781E-01 -7.09270E-03  1.10161E-03  4.59856E-02  8.26208E-04
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (979.3) atteint une valeur supérieure à 50% du temps CPU (970.1). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.90116E-03
+  3.89544E-03
+  3.88640E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 19:14:46 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  1.19936E+01  3.31232E-01 -2.66312E-02  2.87916E-03 -5.51366E-02  4.31874E-03
+            1            2  1.70000E-05            2  2.00000E+00  5.99682E+00  1.65616E-01 -1.33156E-02  1.43958E-03 -5.51366E-02  1.07968E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.46728E-01
+  3.44824E-01
+  3.42920E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 19:14:52 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  1.10583E+01  8.67651E-02 -1.55453E-02  2.44560E-03 -1.56900E-02  3.66839E-03
+            1            2  1.70000E-05            2  2.00000E+00  5.52917E+00  4.33825E-02 -7.77263E-03  1.22280E-03 -1.56900E-02  9.17097E-04
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1295.0) atteint une valeur supérieure à 50% du temps CPU (1319.6). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 19:34:26 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.00000E-05            1  0.00000E+00  1.22717E+01  4.38933E-01  1.89209E-02  3.01573E-03 -7.13233E-02  4.52360E-03
+            1            2  2.00000E-05            2  2.00000E+00  6.13585E+00  2.19465E-01  9.46046E-03  1.50787E-03 -7.13233E-02  1.13090E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2e-05
+#Crack advances                                                                  
+ CRACK0      
+  4.38641E-03
+  4.36055E-03
+  4.35888E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 19:34:32 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.00000E-05            1  0.00000E+00  1.17373E+01  3.39005E-01 -2.97291E-02  2.75761E-03 -5.75517E-02  4.13642E-03
+            1            2  2.00000E-05            2  2.00000E+00  5.86867E+00  1.68904E-01 -1.48646E-02  1.37881E-03 -5.75517E-02  1.03410E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1446.7) atteint une valeur supérieure à 50% du temps CPU (1767.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2.3e-05
+#Crack advances                                                                  
+ CRACK0      
+  9.94571E-01
+  9.94647E-01
+  9.94706E-01
+  9.94722E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 20:02:12 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.30000E-05            1  0.00000E+00  1.37761E+01  4.07807E-01 -1.34008E-02  3.79895E-03 -5.90842E-02  5.69842E-03
+            1            2  2.30000E-05            2  2.00000E+00  6.88806E+00  2.03903E-01 -6.70042E-03  1.89947E-03 -5.90842E-02  1.42460E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.3e-05
+#Crack advances                                                                  
+ CRACK0      
+  9.45635E-01
+  9.45930E-01
+  9.46188E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 20:02:20 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.30000E-05            1  0.00000E+00  1.34247E+01  2.92146E-01 -2.67978E-03  3.60616E-03 -4.33586E-02  5.40924E-03
+            1            2  2.30000E-05            2  2.00000E+00  6.71237E+00  1.45285E-01 -1.33989E-03  1.80308E-03 -4.33586E-02  1.35231E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1643.9) atteint une valeur supérieure à 50% du temps CPU (2056.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  7.41954E-03
+  7.33984E-03
+  7.26040E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 20:36:05 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.40000E-05            1  0.00000E+00  1.45074E+01 -1.29484E+00 -1.16049E-02  4.24281E-03  1.75304E-01  6.36421E-03
+            1            2  2.40000E-05            2  2.00000E+00  7.25369E+00 -6.47446E-01 -5.80246E-03  2.12140E-03  1.75304E-01  1.59105E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  5.26556E-02
+  5.23692E-02
+  5.20825E-02
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 20:36:10 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.40000E-05            1  0.00000E+00  1.40055E+01 -4.32628E-01 -6.72917E-03  3.92681E-03  6.17212E-02  5.89021E-03
+            1            2  2.40000E-05            2  2.00000E+00  7.00272E+00 -2.16866E-01 -3.36458E-03  1.96340E-03  6.17212E-02  1.47255E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1795.6) atteint une valeur supérieure à 50% du temps CPU (2123.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2.5e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 21:10:02 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.50000E-05            1  0.00000E+00  1.50496E+01 -1.57126E+00 -6.24058E-03  4.57921E-03  2.03742E-01  6.86881E-03
+            1            2  2.50000E-05            2  2.00000E+00  7.52482E+00 -7.85658E-01 -3.12029E-03  2.28960E-03  2.03742E-01  1.71720E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.5e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.99810E-03
+  3.97765E-03
+  3.94450E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 21:10:11 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.50000E-05            1  0.00000E+00  1.45786E+01 -7.73274E-01  2.27632E-02  4.26266E-03  1.05453E-01  6.39399E-03
+            1            2  2.50000E-05            2  2.00000E+00  7.28926E+00 -3.87060E-01  1.13816E-02  2.13133E-03  1.05453E-01  1.59850E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1983.7) atteint une valeur supérieure à 50% du temps CPU (2574.4). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2.8e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.00993E+00
+  1.00991E+00
+  1.00983E+00
+  1.00972E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 21:52:17 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.80000E-05            1  0.00000E+00  1.63708E+01 -5.40426E-01 -1.12446E-02  5.36593E-03  6.58569E-02  8.04889E-03
+            1            2  2.80000E-05            2  2.00000E+00  8.18542E+00 -2.70221E-01 -5.62232E-03  2.68296E-03  6.58569E-02  2.01222E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.8e-05
+#Crack advances                                                                  
+ CRACK0      
+  5.74580E-01
+  5.76426E-01
+  5.78205E-01
+  5.81592E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 21:52:35 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.80000E-05            1  0.00000E+00  1.56811E+01  9.99822E-01  4.47478E-02  4.93803E-03 -1.26716E-01  7.40701E-03
+            1            2  2.80000E-05            2  2.00001E+00  7.84037E+00  5.03007E-01  2.23739E-02  2.46902E-03 -1.26716E-01  1.85175E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (2448.2) atteint une valeur supérieure à 50% du temps CPU (2811.3). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 3.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  9.44110E+00
+  9.44101E+00
+  9.44091E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 22:37:01 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.10000E-05            1  0.00000E+00  6.21714E+00  1.09617E+00 -3.76749E-03  7.97087E-04 -3.30052E-01  1.19563E-03
+            1            2  3.10000E-05            2  2.00000E+00  3.10856E+00  5.48127E-01 -1.88375E-03  3.98544E-04 -3.30052E-01  2.98908E-04
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 22:37:02 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.10000E-05            1  0.00000E+00  1.66775E+01  3.26352E+00 -4.58162E-03  5.77580E-03 -3.61303E-01  8.66370E-03
+            1            2  3.10000E-05            2  2.00000E+00  8.33871E+00  1.63201E+00 -2.29081E-03  2.88790E-03 -3.61303E-01  2.16592E-03
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 3.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.33219E-01
+  3.30199E-01
+  3.27466E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 11/10/2016 A 22:37:07 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.10000E-05            1  0.00000E+00  1.59968E+01  1.15099E+00  3.80564E-02  5.14449E-03 -1.42583E-01  7.71668E-03
+            1            2  3.10000E-05            2  2.00001E+00  7.99815E+00  5.78630E-01  1.90282E-02  2.57224E-03 -1.42583E-01  1.92917E-03
+
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (2571.8) atteint une valeur supérieure à 50% du temps CPU (3163.3). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 3.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 11/10/2016 A 23:25:48 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.40000E-05            1  0.00000E+00  8.29371E+00  1.38993E+00 -1.14834E-02  1.41435E-03 -3.15574E-01  2.12153E-03
+            1            2  3.40000E-05            2  2.00000E+00  4.14685E+00  6.95020E-01 -5.74169E-03  7.07177E-04 -3.15574E-01  5.30383E-04
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 3.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.15720E+01
+  1.15721E+01
+  1.15721E+01
+
+
+ <I>_EXIT_CODE = 134

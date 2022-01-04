@@ -1,0 +1,270 @@
+ 
+		   if (min(GG)==0): # is the lowest value 0
+			   print "   Not propagating crack_"+str(k)+" as G = "+str(min(GG))
+			   # Populate list of arrested cracks to keep in model
+			   N_FISS.append(FISS[k][1+i]) # Origonal cracks
+			   
+			   FFF = "C_"+str(k)+"_"+str(1)+"_"+str(i) 
+			   N_name.append(FFF)
+			   CL_NBCALC[0][k] = eval(FFF)
+			   CL_NBCALC[1][k] = eval(FFF)
+			   
+		   else:
+			   print "\n   Adding crack_"+str(k)+" to cohesive zone test list as G = "+str(min(GG)+"\n")	
+
+	#-----------------    TEST 2 - Propgated beyond cz? (da>5*h_min)   ----#
+			   # Detect crack front (crack 1 : CK_0_1_0, Crack 2 : CK_1_1_0)
+			   f = "P_"+str(k)+"_"+str(1)+"_"+str(i)       
+			   FISP[k][i] = CO(f) 			   
+			   if(i==0):
+				   ADV[k]= PROPA_FISS(MODELE=MODX[i],
+							   METHODE_PROPA='DETECTION',
+							   RESULTAT=EVOL[i],
+							   ZONE_MAJ='TOUT',
+							   TEST_MAIL='NON',
+							   FISSURE=(_F(FISS_ACTUELLE=FISS[k][1+i],
+										  FISS_PROPAGEE=FISP[k][i],
+											  NB_POINT_FOND=nb_pts,
+										  TABLE=SIFIN[k],), # Intial table
+										  ),
+							   INFO=1,);
+			   else:
+					   ADV[k]= PROPA_FISS(MODELE=MODX[i],
+							   METHODE_PROPA='DETECTION',
+							   RESULTAT=EVOL[i],
+							   ZONE_MAJ='TOUT',
+							   TEST_MAIL='NON',
+							   FISSURE=(_F(FISS_ACTUELLE=FISS[k][1+i],
+										  FISS_PROPAGEE=FISP[k][i],
+											  NB_POINT_FOND=nb_pts,
+										  TABLE=SIFF[k],), # Created by previous step
+										  ),
+							   INFO=1,);	
+
+			   # Prints table of crack advances to RESU (Work out crack speeds from this)
+			   IMPR_TABLE(TABLE=ADV[k],TITRE=' CRACK_'+ str(k) + '\n Time ' + str(instfin[i]),)
+			   tab = ADV[k].EXTR_TABLE().values() # Convert table to python using PAR_LOT= 'NON'
+			   TAB=tab['CRACK0']
+			   print tab # Prints table to mess file
+			  
+			   # Test each point along crack front
+			  # if (min(TAB)>5*h_min): # minimum distance is 5 elements
+			   if (min(TAB)>0*h_min): # REMOVE WHEN DOING IT FOR REAL!
+				   print "Adding crack_"+str(k)+" to propagation list"
+				   P_FISS.append(FISP[k][0]) # Add crack to list to propagation	
+				   P_name.append(str(f))
+
+			   else:
+				   print "Not adding crack_"+str(k)+" to propagation list (da< 5*h_min not beyond CZ)"
+				   PN_FISS.append(FISP[k][0]) # Add crack to list NOT to propagation
+				   PN_name.append(str(f))
+
+	   print "\n #-----------------------------------------------------------"
+	   print "   Propagation_" + str(i) + " summary of tests 1 & 2"	   	   
+	   print "#-----------------------------------------------------------"	   
+	   print "   Propagaing - "+str(P_name)
+	   print "   Not propagating: Failed (G=0) - "+str(N_name)
+	   print "   Not propagating: Failed (da>5*h_min) - "+str(PN_name)
+	   print "#----------------------------------------------------------- \n"
+	   
+	#----------------------------------------------------------------------- 
+	#                CALCULATING SIF TO PROPAGATE CRACKS P_FISS
+	#-----------------------------------------------------------------------	   
+	   crack_arg = tuple(P_FISS) # Used for next rotation					   
+
+       # Calculating NEW SIF for CRACKS in P_FISS
+	   if len(crack_arg) >= 1:
+		   print "   Calculating SIF for cracks: " +str(P_name)
+		   print "   Memory locations:- "+ str(crack_arg)
+		   
+		   # Calculate SIF for each crack to propagate  
+		   for k in range(len(crack_arg)):
+			   if(i!=0):
+				   DETRUIRE(CONCEPT=_F(NOM=SIFF[k]),INFO=1); 
+				   
+			   SIFF[k]=CALC_G(RESULTAT=EVOL[i],
+						  OPTION='K_G_COHE',
+						  INST=instfin[i],
+						  THETA=_F(FISSURE=P_FISS[k],
+						           NUME_FOND=1,
+						           NB_POINT_FOND=nb_pts,
+						           R_SUP=h_min*10,
+						           R_INF=h_min*5), # R_INF is a dummy value, not used for cohesive
+						  LISSAGE=_F(LISSAGE_THETA='LAGRANGE',
+									 LISSAGE_G='LAGRANGE_NO_NO',),);
+									 		 
+			   IMPR_TABLE(TABLE=SIFF[k],UNITE=6,);
+			   IMPR_TABLE(TABLE=SIFF[k],UNITE=8,);
+		   
+		   # dummy model to get past the commamd		   
+		   DUMMOD=MODI_MODELE_XFEM(MODELE_IN=MO,
+									FISSURE=crack_arg,
+									CONTACT='NON',);		  
+
+	#----------------------------------------------------------------------- 
+	#                         PROPAGATE CRACKS
+	#-----------------------------------------------------------------------
+		   for k in range(len(crack_arg)):
+			   ff = "C_"+str(k)+"_"+str(0)+"_"+str(i+1)  
+			   # q-static
+			   PROPA_FISS(MODELE=DUMMOD,
+					   METHODE_PROPA='COHESIVE',
+					   CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+					   ZONE_MAJ='TOUT',
+					   TEST_MAIL='NON',
+					   FISSURE=_F(FISS_ACTUELLE=P_FISS[k],
+								  FISS_PROPAGEE=CO(ff),
+								  NB_POINT_FOND=nb_pts,
+								  TABLE=SIFF[k],),
+					   DA_MAX=da_max,
+					  INFO=1,);
+			
+			   FISS[k][0] = eval(ff) # FISS[0][0],FISS[0][1] always q-static
+			   print 'k is %d'%k
+			   print FISS[k][0] 
+			   
+		   # Dynamic
+		   for m in range(len(crack_arg)):
+			   print 'm is %d'%m
+			   # FISS[0] is q-static, Shifted for next dynamic FISS[2][n]
+			   ff = "C_"+str(m)+"_"+str(1)+"_"+str(i+1)
+			   print f            
+			   PROPA_FISS(MODELE=DUMMOD,
+					   METHODE_PROPA='COHESIVE',
+					   CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+					   ZONE_MAJ='TOUT',
+					   TEST_MAIL='NON',
+					   FISSURE=_F(FISS_ACTUELLE=P_FISS[m],
+								   FISS_PROPAGEE=CO(ff),
+								   NB_POINT_FOND=nb_pts,
+								   TABLE=SIFF[k],),
+					   DA_MAX=da_max,
+					   INFO=1,);  
+
+			   FISS[m][2+i] = eval(ff)
+			   print FISS[m][2+i]
+	   
+	#----------------------------------------------------------------------- 
+	#                       New crack list
+	#-----------------------------------------------------------------------
+
+	   print "\n #-----------------------------------------------------------"
+	   print "   SUMMARY:- Propagation_" + str(i)	   	   
+	   print "\n #-----------------------------------------------------------"	   
+	   crack_arg= tuple(P_FISS + N_FISS + PN_FISS) 
+	   # ALSO UPDATE FISS LIST WITH N_FISS and PN_FISS
+	   # I think P_FISS first, then PN_FISS and then N_FISS
+	   # This will require PROPA_FISS propagation to be m+len(N_FISS)+len(PN_FISS)
+	   cnames= tuple(P_name + N_name + PN_name) 
+	   print "   COUNT TEST Cracks for next nbcalc " + str(len(crack_arg))+ " = "+ str(int_nb_cracks)
+	   print "   List of cracks for next time step"+ str(cnames)	
+	   print "   Memory locations for cracks: "+str(crack_arg)
+	   ps=[]
+	   ps.append("Propagation_" + str(i))
+	   ps.append("N_FISS:" + str(N_name))
+	   ps.append("NP_FISS:" + str(PN_name))
+	   ps.append("P_FISS:" + str(P_name))
+	   Prop_sum.append(ps) # adding to total summary
+	   print "#----------------------------------------------------------- \n"
+	   
+	   #Destroy memory objects for loop repeat
+	   DETRUIRE(CONCEPT=_F(NOM=CH1),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=CH2),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=MODK),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=CTX),INFO=1);      
+	   DETRUIRE(CONCEPT=_F(NOM=CHAMPMA),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=RIGIDE),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=TRACTION),INFO=1);
+	   DETRUIRE(CONCEPT=_F(NOM=DUMMOD),INFO=1);
+	   if (len(P_FISS)>0): # destroy ADV  if it has been used
+		   for z in range(len(P_FISS)):
+			   DETRUIRE(CONCEPT=_F(NOM=ADV[z]),INFO=1);
+	   if (i==0):
+		   for z in range(int_nb_cracks): # destroy ADVS for arrest test
+			   DETRUIRE(CONCEPT=_F(NOM=ADVS[z]),INFO=1);			   
+			   			   	
+	   del P_FISS, N_FISS, PN_FISS, GG, tmp, tab, ps
+	   del P_name, N_name, PN_name			
+	      
+	   # Prints a total summary each nbcalc
+	   print"\n =========================================================== \n"
+	   print "   TOTAL PROPAGATION SUMMARY \n"
+	   for PS in range(len(Prop_sum)):
+		   print Prop_sum[PS] 			   			   	   		   						   
+	   print"\n =========================================================== \n"	   
+	   
+	# IF last step 	
+	if(i==(nbcalc-1)):	
+		print "Last time step: \n"
+		EVOL[i]=DYNA_NON_LINE(reuse=EVOL[i],
+								 ETAT_INIT  = _F(DEPL = CH1, SIGM=CH2,),
+								 MODELE     = MODX[i],
+								 CHAM_MATER = CHAMPM[i],
+								 MASS_DIAG  = 'OUI',
+								 EXCIT      = (_F(CHARGE = RIGID[i]),
+											   _F(CHARGE = TRACTI[i],
+												  FONC_MULT = TRACT_X),
+											   ),
+								COMPORTEMENT = (_F(RELATION = 'ELAS', 
+												   GROUP_MA = 'VOLUME'),
+											   ),
+								INCREMENT  = _F(LIST_INST = INSTANTX,
+												INST_INIT = tdyn,
+												INST_FIN = instfin[i],
+												PRECISION = 1.E-9),
+								SCHEMA_TEMPS=_F(SCHEMA='DIFF_CENT',
+												FORMULATION='ACCELERATION',
+												STOP_CFL = 'NON'),
+								CONVERGENCE= _F(ITER_GLOB_MAXI = 50),
+								NEWTON     = _F(MATRICE = 'TANGENTE',
+												REAC_ITER=1),
+								ARCHIVAGE = _F(LIST_INST = INS_AR,
+											   PRECISION=1.E-9,
+											   CHAM_EXCLU='VARI_ELGA')
+								);
+								
+			# Restrict to result (recover)
+		EVOL[i] = EXTR_RESU(reuse=EVOL[i],
+							   RESULTAT=EVOL[i],
+							   ARCHIVAGE=_F(LIST_INST = INS_AR,
+											PRECISION=1.E-7,)); 
+	   
+#----------------------------------------------------------------------#
+#                       PHASE 3 - Post-processing                      #
+#                                                                      #
+#----------------------------------------------------------------------#
+
+
+
+
+print "\n #===========================================================# \n"
+print "   PHASE 3 - Post processing"
+print "\n #===========================================================# \n"
+
+# Will like to print a new one ever nbcalc
+# recovering level sets (numbering)
+MA_XFEM=POST_MAIL_XFEM(MODELE=MODX[nbcalc-1]);
+
+# Create model
+MOD_VISU=AFFE_MODELE(MAILLAGE=MA_XFEM,
+                     	AFFE=_F(TOUT='OUI',
+                        	     PHENOMENE='MECANIQUE',
+                    	         MODELISATION='3D'));
+                             
+# process and calculate results fields
+RESXFEM1=POST_CHAM_XFEM(RESULTAT=EVOL[nbcalc-1],
+                	        MODELE_VISU=MOD_VISU);
+                        
+RESXFEM1=CALC_CHAMP(reuse=RESXFEM1,
+            	        RESULTAT=RESXFEM1,
+        	            CONTRAINTE='SIGM_NOEU',
+      	              CRITERES=('SIEQ_ELGA','SIEQ_ELNO'))
+
+# Print results               
+IMPR_RESU(FORMAT='MED',
+ 	         RESU=_F(RESULTAT=RESXFEM1),);
+
+# Delete these so we can repeat each step of propagation
+DETRUIRE(CONCEPT=_F(NOM=MA_XFEM),INFO=1);
+DETRUIRE(CONCEPT=_F(NOM=MOD_VISU),INFO=1);
+DETRUIRE(CONCEPT=_F(NOM=RESXFEM1),INFO=1);

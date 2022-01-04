@@ -1,0 +1,1224 @@
+                                                                                
+                                                                                
+             -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --             
+                                                                                
+                     Version 12.0.23 modifiée le 31/08/2016                     
+                     révision 1f0af493 - branche 'default'                      
+                         Copyright EDF R&D 1991 - 2016                          
+                                                                                
+                    Exécution du : Wed Oct 12 19:07:36 2016                     
+                   Nom de la machine : mbgnktc2-OptiPlex-9010                   
+                              Architecture : 64bit                              
+                          Type de processeur : x86_64                           
+                Système d'exploitation : Linux 3.13.0-85-generic                
+                        Langue des messages : en (UTF-8)                        
+                                                                                
+                           Version de Python : 2.7.6                            
+                            Version de NumPy : 1.8.2                            
+                           Parallélisme MPI : inactif                           
+                          Parallélisme OpenMP : actif                           
+                        Nombre de processus utilisés : 7                        
+                     Version de la librairie HDF5 : 1.8.10                      
+                      Version de la librairie MED : 3.0.8                       
+                     Version de la librairie MUMPS : 4.10.0                     
+                    Version de la librairie SCOTCH : 5.1.10                     
+                  Mémoire limite pour l'exécution : 6250.00 Mo                  
+                    consommée par l'initialisation : 0.00 Mo                    
+                  par les objets du jeu de commandes : 0.00 Mo                  
+                 reste pour l'allocation dynamique : 5828.86 Mo                 
+                Taille limite des fichiers d'échange : 97.66 Go                 
+                                                                                
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (200.5) atteint une valeur supérieure à 50% du temps CPU (198.9). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (995.4) atteint une valeur supérieure à 50% du temps CPU (709.8). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 19:20:40 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  1.10000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.32223E-01
+  1.32223E-01
+  1.32223E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 19:20:54 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  1.68754E-02 -4.15745E-03  2.29253E-04  1.93363E-07  4.37037E-01  2.90045E-08
+            1            2  1.10000E-05            2  2.00000E+01  8.43771E-03 -2.07873E-03  1.14627E-04  9.66815E-08  4.37037E-01  7.25111E-09
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (166.2) atteint une valeur supérieure à 50% du temps CPU (185.8). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1232.7) atteint une valeur supérieure à 50% du temps CPU (1291.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 19:41:13 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  1.40000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.33191E+00
+  1.33191E+00
+  1.33191E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 19:41:23 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  4.48777E-02  3.49893E-03  6.45548E-04  1.29714E-06 -1.53777E-01  1.94570E-07
+            1            2  1.40000E-05            2  2.00000E+01  2.24389E-02  1.74946E-03  3.22774E-04  6.48568E-07 -1.53777E-01  4.86426E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (162.6) atteint une valeur supérieure à 50% du temps CPU (185.2). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1434.2) atteint une valeur supérieure à 50% du temps CPU (1877.5). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 20:11:13 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  1.70000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.01167E+01
+  1.01167E+01
+  1.01167E+01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 20:11:23 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  3.32888E-02 -3.88789E-03  3.11053E-04  7.18963E-07  2.26565E-01  1.07844E-07
+            1            2  1.70000E-05            2  2.00000E+01  1.66444E-02 -1.94395E-03  1.55526E-04  3.59481E-07  2.26565E-01  2.69611E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (137.6) atteint une valeur supérieure à 50% du temps CPU (176.6). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1448.5) atteint une valeur supérieure à 50% du temps CPU (2504.4). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 20:50:40 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.00000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  2.00000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 20:50:50 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.00000E-05            1  0.00000E+00  3.12376E-02  1.05657E-03  2.35423E-04  6.25261E-07 -6.74675E-02  9.37891E-08
+            1            2  2.00000E-05            2  2.00000E+01  1.56188E-02  5.28282E-04  1.17712E-04  3.12630E-07 -6.74675E-02  2.34473E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (127.7) atteint une valeur supérieure à 50% du temps CPU (174.4). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1707.8) atteint une valeur supérieure à 50% du temps CPU (3137.4). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 21:40:07 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.30000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  2.30000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.3e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 21:40:17 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.30000E-05            1  0.00000E+00  3.35136E-02 -1.41998E-03 -1.03161E-04  7.20120E-07  8.43888E-02  1.08018E-07
+            1            2  2.30000E-05            2  2.00000E+01  1.67568E-02 -7.09995E-04 -5.15806E-05  3.60060E-07  8.43888E-02  2.70045E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (137.3) atteint une valeur supérieure à 50% du temps CPU (177.4). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1790.4) atteint une valeur supérieure à 50% du temps CPU (3348.4). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 22:33:01 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.40000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  2.40000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 22:33:11 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.40000E-05            1  0.00000E+00  3.50533E-02  7.92168E-04 -1.98691E-04  7.86821E-07 -4.51433E-02  1.18023E-07
+            1            2  2.40000E-05            2  2.00000E+01  1.75266E-02  3.96069E-04 -9.93456E-05  3.93411E-07 -4.51433E-02  2.95058E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (130.4) atteint une valeur supérieure à 50% du temps CPU (176.8). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1835.1) atteint une valeur supérieure à 50% du temps CPU (3553.8). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 23:29:15 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.50000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  2.50000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.5e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 23:29:25 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.50000E-05            1  0.00000E+00  3.21961E-02 -2.06627E-03 -1.70416E-04  6.66173E-07  1.27145E-01  9.99259E-08
+            1            2  2.50000E-05            2  2.00000E+01  1.60981E-02 -1.03315E-03 -8.52078E-05  3.33086E-07  1.27145E-01  2.49815E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (128.7) atteint une valeur supérieure à 50% du temps CPU (175.0). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 00:36:08 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.80000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  2.80000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 2.8e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 00:36:18 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  2.80000E-05            1  0.00000E+00  3.34113E-02  2.78274E-04 -1.64072E-04  7.14511E-07 -1.66540E-02  1.07177E-07
+            1            2  2.80000E-05            2  2.00000E+01  1.67056E-02  1.39124E-04 -8.20358E-05  3.57256E-07 -1.66540E-02  2.67942E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (128.3) atteint une valeur supérieure à 50% du temps CPU (176.1). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 01:58:57 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.10000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  3.10000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 3.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 01:59:08 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.10000E-05            1  0.00000E+00  3.46841E-02 -2.46489E-03 -1.29353E-04  7.73813E-07  1.40496E-01  1.16072E-07
+            1            2  3.10000E-05            2  2.00000E+01  1.73420E-02 -1.23246E-03 -6.46766E-05  3.86907E-07  1.40496E-01  2.90180E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (156.8) atteint une valeur supérieure à 50% du temps CPU (187.2). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 03:30:53 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.40000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  3.40000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 3.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 03:31:03 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.40000E-05            1  0.00000E+00  3.53152E-02  6.58370E-04  6.91187E-05  7.98467E-07 -3.72542E-02  1.19770E-07
+            1            2  3.40000E-05            2  2.00000E+01  1.76576E-02  3.29168E-04  3.45593E-05  3.99233E-07 -3.72542E-02  2.99425E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (119.0) atteint une valeur supérieure à 50% du temps CPU (170.3). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 05:08:50 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.70000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  3.70000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 3.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 05:09:00 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  3.70000E-05            1  0.00000E+00  3.43024E-02 -4.19178E-04  1.72122E-04  7.53195E-07  2.44328E-02  1.12979E-07
+            1            2  3.70000E-05            2  2.00000E+01  1.71512E-02 -2.09609E-04  8.60609E-05  3.76598E-07  2.44328E-02  2.82448E-08
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (136.6) atteint une valeur supérieure à 50% du temps CPU (177.1). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 06:56:53 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  4.00000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  4.00000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 06:57:03 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  4.00000E-05            1  0.00000E+00  3.26406E-02 -9.77638E-04  2.28725E-04  6.82515E-07  5.97795E-02  1.02377E-07
+            1            2  4.00000E-05            2  2.00000E+01  1.63203E-02 -4.88839E-04  1.14363E-04  3.41258E-07  5.97795E-02  2.55943E-08
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 08:55:32 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  4.30000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  4.30000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 4.3e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 08:55:43 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  4.30000E-05            1  0.00000E+00  3.32136E-02 -1.20503E-03  2.66141E-04  7.06997E-07  7.23421E-02  1.06050E-07
+            1            2  4.30000E-05            2  2.00000E+01  1.66068E-02 -6.02534E-04  1.33070E-04  3.53499E-07  7.23421E-02  2.65124E-08
+
+   
+   !-----------------------------------------------------------------------------------!
+   ! <ArretCPUError> <MECANONLINE9_2>                                                  !
+   !                                                                                   !
+   !    Arrêt par manque de temps CPU au numéro d'instant < 389 >                      !
+   !       - Temps moyen par pas de temps        : 6.914884                            !
+   !       - Temps CPU restant                   : 3.630000                            !
+   !    La base globale est sauvegardée. Elle contient les pas archivés avant l'arrêt. !
+   !                                                                                   !
+   !    Conseil :                                                                      !
+   !       - Augmentez le temps CPU.                                                   !
+   !-----------------------------------------------------------------------------------!
+   
+ <I> <FIN> FERMETURE DE LA BASE "GLOBALE" EFFECTUEE.
+
+ <FIN> Arrêt normal dans "FIN".
+ <I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     645.87 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                    3788.34 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :    5661.57 Mo
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * init (jdc)               :   56585.62 :   29803.60 :   86389.22 :   51577.63 *
+ *  . compile               :       0.00 :       0.00 :       0.00 :       0.01 *
+ *  . exec_compile          :   56585.43 :   29803.58 :   86389.01 :   51577.41 *
+ * DEBUT                    :       0.03 :       0.01 :       0.04 :       0.04 *
+ * LIRE_MAILLAGE            :       0.77 :       0.02 :       0.79 :       0.79 *
+ * COPIER                   :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DEFI_GROUP               :       0.01 :       0.01 :       0.02 :       0.02 *
+ * AFFE_MODELE              :       0.26 :       0.30 :       0.56 :       0.25 *
+ * DEFI_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CREA_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * CREA_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DEFI_FISS_XFEM           :       1.94 :       0.48 :       2.42 :       1.95 *
+ * DEFI_FISS_XFEM           :       1.98 :       0.55 :       2.53 :       2.06 *
+ * PROPA_FISS               :       2.41 :       0.46 :       2.87 :       2.45 *
+ * PROPA_FISS               :       2.27 :       0.44 :       2.71 :       2.34 *
+ * PROPA_FISS               :       2.32 :       0.47 :       2.79 :       2.33 *
+ * PROPA_FISS               :       2.28 :       0.50 :       2.78 :       4.99 *
+ * DEFI_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_LIST_REEL           :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DEFI_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.79 :       0.47 :       1.26 :       0.78 *
+ * DEFI_CONTACT             :       0.06 :       0.04 :       0.10 :       0.09 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       2.02 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     198.90 :     200.52 :     399.42 :     181.86 *
+ * CREA_CHAMP               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.04 :       0.00 :       0.04 :       0.06 *
+ * MODI_MODELE_XFEM         :       0.89 :       0.32 :       1.21 :       0.99 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.15 :       0.02 :       0.17 :       0.17 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.01 :       0.04 :       0.04 *
+ * DYNA_NON_LINE            :     709.78 :     995.45 :    1705.23 :     572.50 *
+ * EXTR_RESU                :       0.05 :       0.01 :       0.06 :       0.10 *
+ * CALC_G                   :       3.46 :       0.94 :       4.40 :       3.53 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.44 :       0.99 :       4.43 :       3.49 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.03 *
+ * AFFE_MODELE              :       0.21 :       0.43 :       0.64 :       0.18 *
+ * PROPA_FISS               :       2.31 :       0.51 :       2.82 :       2.35 *
+ * PROPA_FISS               :       2.37 :       0.29 :       2.66 :       2.42 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.47 :       0.96 :       4.43 :       3.51 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.28 :       0.97 :       3.25 :       2.34 *
+ * IMPR_TABLE               :       0.02 :       0.00 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.42 :       0.86 :       4.28 :       3.50 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.64 :       0.48 :       1.12 :       0.72 *
+ * PROPA_FISS               :       2.51 :       0.80 :       3.31 :       2.51 *
+ * PROPA_FISS               :       2.46 :       0.92 :       3.38 :       2.49 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.71 :       0.49 :       1.20 :       0.80 *
+ * DEFI_CONTACT             :       0.07 :       0.02 :       0.09 :       0.10 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.04 :       0.00 :       0.04 :       0.04 *
+ * STAT_NON_LINE            :     185.83 :     166.21 :     352.04 :     130.52 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.73 :       0.56 :       1.29 :       0.81 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.02 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.01 :       0.03 :       0.04 *
+ * DYNA_NON_LINE            :    1291.70 :    1232.73 :    2524.43 :    1076.87 *
+ * EXTR_RESU                :       0.04 :       0.01 :       0.05 :       0.06 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * CALC_G                   :       3.34 :       0.93 :       4.27 :       3.35 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.02 :       0.00 :       0.02 :       0.01 *
+ * AFFE_MODELE              :       0.30 :       0.42 :       0.72 :       0.25 *
+ * PROPA_FISS               :       2.24 :       0.56 :       2.80 :       2.33 *
+ * PROPA_FISS               :       2.38 :       0.44 :       2.82 :       2.41 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.23 :       0.78 :       3.01 :       2.25 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.32 :       0.93 :       4.25 :       3.43 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.59 :       0.53 :       1.12 :       0.65 *
+ * PROPA_FISS               :       2.46 :       0.89 :       3.35 :       2.44 *
+ * PROPA_FISS               :       2.32 :       0.93 :       3.25 :       2.32 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.78 :       0.57 :       1.35 :       0.87 *
+ * DEFI_CONTACT             :       0.12 :       0.04 :       0.16 :       0.17 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.10 :       0.02 :       0.12 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.01 :       0.03 :       0.04 *
+ * STAT_NON_LINE            :     185.16 :     162.60 :     347.76 :     131.28 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.04 :       0.00 :       0.04 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.74 :       0.55 :       1.29 :       0.80 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.01 :       0.04 :       0.03 *
+ * DYNA_NON_LINE            :    1877.51 :    1434.16 :    3311.67 :    1647.60 *
+ * EXTR_RESU                :       0.05 :       0.01 :       0.06 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * CALC_G                   :       3.12 :       1.06 :       4.18 :       3.23 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_MODELE              :       0.19 :       0.43 :       0.62 :       0.15 *
+ * PROPA_FISS               :       2.24 :       0.50 :       2.74 :       2.27 *
+ * PROPA_FISS               :       2.20 :       0.53 :       2.73 :       2.25 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.19 :       0.96 :       3.15 :       2.21 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.25 :       0.98 :       4.23 :       3.29 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.64 :       0.50 :       1.14 :       0.66 *
+ * PROPA_FISS               :       2.36 :       0.93 :       3.29 :       2.33 *
+ * PROPA_FISS               :       2.33 :       0.95 :       3.28 :       2.33 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.74 :       0.53 :       1.27 :       0.79 *
+ * DEFI_CONTACT             :       0.07 :       0.03 :       0.10 :       0.10 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.02 :       0.14 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.00 :       0.02 :       0.03 *
+ * STAT_NON_LINE            :     176.58 :     137.60 :     314.18 :     123.81 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.02 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.03 *
+ * MODI_MODELE_XFEM         :       0.79 :       0.53 :       1.32 :       0.84 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.02 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.04 *
+ * DYNA_NON_LINE            :    2504.45 :    1448.53 :    3952.98 :    2221.38 *
+ * EXTR_RESU                :       0.05 :       0.00 :       0.05 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.23 :       1.01 :       4.24 :       3.29 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_MODELE              :       0.22 :       0.43 :       0.65 :       0.18 *
+ * PROPA_FISS               :       2.30 :       0.48 :       2.78 :       2.30 *
+ * PROPA_FISS               :       2.24 :       0.53 :       2.77 :       2.30 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.21 :       1.27 :       3.48 :       2.52 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.23 :       0.99 :       4.22 :       3.29 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.60 :       0.52 :       1.12 :       0.64 *
+ * PROPA_FISS               :       2.25 :       0.95 :       3.20 :       2.27 *
+ * PROPA_FISS               :       2.32 :       0.88 :       3.20 :       2.34 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.73 :       0.56 :       1.29 :       0.80 *
+ * DEFI_CONTACT             :       0.07 :       0.02 :       0.09 :       0.10 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.02 :       0.14 :       0.44 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.01 :       0.03 :       0.04 *
+ * STAT_NON_LINE            :     174.38 :     127.66 :     302.04 :     110.49 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.03 *
+ * MODI_MODELE_XFEM         :       0.74 :       0.53 :       1.27 :       0.79 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.02 :       0.13 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.01 :       0.04 :       0.04 *
+ * DYNA_NON_LINE            :    3137.37 :    1707.78 :    4845.15 :    2834.79 *
+ * EXTR_RESU                :       0.04 :       0.03 :       0.07 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.18 :       1.00 :       4.18 :       3.23 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.00 *
+ * AFFE_MODELE              :       0.19 :       0.43 :       0.62 :       0.15 *
+ * PROPA_FISS               :       2.22 :       0.53 :       2.75 :       2.27 *
+ * PROPA_FISS               :       2.20 :       0.54 :       2.74 :       2.27 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * PROPA_FISS               :       2.16 :       0.96 :       3.12 :       2.18 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * CALC_G                   :       3.22 :       0.98 :       4.20 :       3.24 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.02 *
+ * MODI_MODELE_XFEM         :       0.60 :       0.52 :       1.12 :       0.63 *
+ * PROPA_FISS               :       2.25 :       0.96 :       3.21 :       2.26 *
+ * PROPA_FISS               :       2.26 :       0.96 :       3.22 :       2.25 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.02 :       0.00 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.50 :       1.26 :       0.79 *
+ * DEFI_CONTACT             :       0.09 :       0.02 :       0.11 :       0.11 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.02 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     177.39 :     137.32 :     314.71 :     116.20 *
+ * CREA_CHAMP               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.54 :       1.30 :       0.82 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.01 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.01 :       0.04 :       0.03 *
+ * DYNA_NON_LINE            :    3348.36 :    1790.44 :    5138.80 :    3037.22 *
+ * EXTR_RESU                :       0.05 :       0.01 :       0.06 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.26 :       0.97 :       4.23 :       3.27 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * AFFE_MODELE              :       0.19 :       0.46 :       0.65 :       0.18 *
+ * PROPA_FISS               :       2.27 :       0.51 :       2.78 :       2.30 *
+ * PROPA_FISS               :       2.23 :       0.53 :       2.76 :       2.28 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.22 :       0.98 :       3.20 :       2.25 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.24 :       0.99 :       4.23 :       3.28 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.62 :       0.53 :       1.15 :       0.66 *
+ * PROPA_FISS               :       2.28 :       0.99 :       3.27 :       2.32 *
+ * PROPA_FISS               :       2.35 :       0.94 :       3.29 :       2.33 *
+ * DETRUIRE                 :       0.02 :       0.00 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.52 :       1.28 :       0.81 *
+ * DEFI_CONTACT             :       0.07 :       0.04 :       0.11 :       0.11 *
+ * AFFE_MATERIAU            :       0.02 :       0.00 :       0.02 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.14 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.00 :       0.02 :       0.04 *
+ * STAT_NON_LINE            :     176.75 :     130.37 :     307.12 :     115.19 *
+ * CREA_CHAMP               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.73 :       0.56 :       1.29 :       0.82 *
+ * AFFE_MATERIAU            :       0.02 :       0.00 :       0.02 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.00 :       0.12 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.04 *
+ * DYNA_NON_LINE            :    3553.83 :    1835.06 :    5388.89 :    3237.49 *
+ * EXTR_RESU                :       0.05 :       0.01 :       0.06 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.21 :       0.98 :       4.19 :       3.23 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.01 *
+ * AFFE_MODELE              :       0.17 :       0.46 :       0.63 :       0.15 *
+ * PROPA_FISS               :       2.21 :       0.52 :       2.73 :       2.26 *
+ * PROPA_FISS               :       2.19 :       0.54 :       2.73 :       2.26 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.23 :       0.94 :       3.17 :       2.24 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.19 :       1.02 :       4.21 :       3.23 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * IMPR_TABLE               :       0.02 :       0.00 :       0.02 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.58 :       0.52 :       1.10 :       0.63 *
+ * PROPA_FISS               :       2.29 :       0.95 :       3.24 :       2.29 *
+ * PROPA_FISS               :       2.36 :       0.91 :       3.27 :       2.32 *
+ * DETRUIRE                 :       0.01 :       0.01 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.77 :       0.52 :       1.29 :       0.80 *
+ * DEFI_CONTACT             :       0.09 :       0.01 :       0.10 :       0.11 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.00 :       0.12 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     175.05 :     128.72 :     303.77 :     115.67 *
+ * CREA_CHAMP               :       0.02 :       0.00 :       0.02 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.00 :       0.03 :       0.03 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.52 :       1.28 :       0.80 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.01 :       0.04 :       0.04 *
+ * DYNA_NON_LINE            :    4208.72 :    2068.86 :    6277.58 :    3876.49 *
+ * EXTR_RESU                :       0.03 :       0.02 :       0.05 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.23 :       1.01 :       4.24 :       3.28 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.01 *
+ * AFFE_MODELE              :       0.22 :       0.44 :       0.66 :       0.18 *
+ * PROPA_FISS               :       2.22 :       0.54 :       2.76 :       2.29 *
+ * PROPA_FISS               :       2.24 :       0.49 :       2.73 :       2.27 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.27 :       0.95 :       3.22 :       2.26 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.25 :       0.98 :       4.23 :       3.29 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.65 :       0.49 :       1.14 :       0.65 *
+ * PROPA_FISS               :       2.34 :       0.93 :       3.27 :       2.32 *
+ * PROPA_FISS               :       2.32 :       0.97 :       3.29 :       2.33 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.01 :       0.01 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.53 :       1.29 :       0.81 *
+ * DEFI_CONTACT             :       0.11 :       0.00 :       0.11 :       0.10 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.01 :       0.13 :       0.14 *
+ * AFFE_CHAR_MECA           :       0.01 :       0.02 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     176.09 :     128.32 :     304.41 :     122.27 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.04 :       0.00 :       0.04 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.73 :       0.56 :       1.29 :       0.81 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.01 :       0.13 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.03 *
+ * DYNA_NON_LINE            :    5144.34 :    2245.61 :    7389.95 :    4825.54 *
+ * EXTR_RESU                :       0.06 :       0.01 :       0.07 :       0.07 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * CALC_G                   :       3.28 :       0.92 :       4.20 :       3.37 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.00 :       0.01 :       0.01 :       0.02 *
+ * AFFE_MODELE              :       0.20 :       0.46 :       0.66 :       0.18 *
+ * PROPA_FISS               :       2.29 :       0.33 :       2.62 :       2.71 *
+ * PROPA_FISS               :       2.39 :       0.39 :       2.78 :       2.42 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * PROPA_FISS               :       2.21 :       0.91 :       3.12 :       2.24 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.34 :       0.94 :       4.28 :       3.42 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.03 :       0.01 :       0.04 :       0.02 *
+ * MODI_MODELE_XFEM         :       0.65 :       0.48 :       1.13 :       0.72 *
+ * PROPA_FISS               :       2.48 :       0.93 :       3.41 :       2.48 *
+ * PROPA_FISS               :       2.46 :       1.47 :       3.93 :       5.44 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.00 *
+ * DETRUIRE                 :       0.03 :       0.00 :       0.03 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.72 :       0.51 :       1.23 :       5.98 *
+ * DEFI_CONTACT             :       0.07 :       0.02 :       0.09 :       0.11 *
+ * AFFE_MATERIAU            :       0.01 :       0.01 :       0.02 :       0.03 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.01 :       0.12 :       0.16 *
+ * AFFE_CHAR_MECA           :       0.03 :       0.00 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     187.25 :     156.82 :     344.07 :     111.81 *
+ * CREA_CHAMP               :       0.04 :       0.00 :       0.04 :       0.01 *
+ * CREA_CHAMP               :       0.02 :       0.00 :       0.02 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.78 :       0.52 :       1.30 :       0.81 *
+ * AFFE_MATERIAU            :       0.02 :       0.00 :       0.02 :       0.02 *
+ * AFFE_CHAR_MECA           :       0.13 :       0.00 :       0.13 :       0.12 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.01 :       0.03 :       0.03 *
+ * DYNA_NON_LINE            :    5689.76 :    2638.46 :    8328.22 :    5374.03 *
+ * EXTR_RESU                :       0.04 :       0.02 :       0.06 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.27 :       0.97 :       4.24 :       3.29 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.01 *
+ * AFFE_MODELE              :       0.18 :       0.47 :       0.65 :       0.18 *
+ * PROPA_FISS               :       2.25 :       0.49 :       2.74 :       2.30 *
+ * PROPA_FISS               :       2.19 :       0.49 :       2.68 :       2.25 *
+ * DETRUIRE                 :       0.01 :       0.00 :       0.01 :       0.01 *
+ * PROPA_FISS               :       2.22 :       0.98 :       3.20 :       2.21 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.15 :       1.02 :       4.17 :       3.24 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.00 *
+ * IMPR_TABLE               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.56 :       0.56 :       1.12 :       0.64 *
+ * PROPA_FISS               :       2.35 :       0.94 :       3.29 :       2.33 *
+ * PROPA_FISS               :       2.30 :       0.98 :       3.28 :       2.33 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.05 :       0.00 :       0.05 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.72 :       0.53 :       1.25 :       0.81 *
+ * DEFI_CONTACT             :       0.09 :       0.01 :       0.10 :       0.10 *
+ * AFFE_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.13 :       0.01 :       0.14 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.01 :       0.02 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     170.35 :     119.03 :     289.38 :     120.80 *
+ * CREA_CHAMP               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.02 :       0.02 :       0.04 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.75 :       0.51 :       1.26 :       0.80 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.01 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.01 :       0.02 :       0.03 :       0.04 *
+ * DYNA_NON_LINE            :    6120.27 :    2791.45 :    8911.72 :    5734.91 *
+ * EXTR_RESU                :       0.08 :       0.00 :       0.08 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.23 :       1.00 :       4.23 :       3.29 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.01 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.00 *
+ * AFFE_MODELE              :       0.24 :       0.42 :       0.66 :       0.18 *
+ * PROPA_FISS               :       2.29 :       0.49 :       2.78 :       2.30 *
+ * PROPA_FISS               :       2.27 :       0.52 :       2.79 :       2.30 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * PROPA_FISS               :       2.14 :       1.03 :       3.17 :       2.21 *
+ * IMPR_TABLE               :       0.05 :       0.00 :       0.05 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.20 :       0.99 :       4.19 :       3.27 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.64 :       0.53 :       1.17 :       0.66 *
+ * PROPA_FISS               :       2.28 :       0.84 :       3.12 :       2.27 *
+ * PROPA_FISS               :       2.25 :       0.95 :       3.20 :       2.27 *
+ * DETRUIRE                 :       0.01 :       0.01 :       0.02 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.01 :       0.01 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.78 :       0.49 :       1.27 :       0.78 *
+ * DEFI_CONTACT             :       0.09 :       0.01 :       0.10 :       0.11 *
+ * AFFE_MATERIAU            :       0.01 :       0.01 :       0.02 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.12 :       0.01 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.01 :       0.03 :       0.03 *
+ * STAT_NON_LINE            :     177.11 :     136.55 :     313.66 :     117.03 *
+ * CREA_CHAMP               :       0.00 :       0.01 :       0.01 :       0.01 *
+ * CREA_CHAMP               :       0.03 :       0.01 :       0.04 :       0.04 *
+ * MODI_MODELE_XFEM         :       0.76 :       0.55 :       1.31 :       0.83 *
+ * AFFE_MATERIAU            :       0.00 :       0.01 :       0.01 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.11 :       0.02 :       0.13 :       0.13 *
+ * AFFE_CHAR_MECA           :       0.02 :       0.02 :       0.04 :       0.03 *
+ * DYNA_NON_LINE            :    6750.38 :    2967.78 :    9718.16 :    6345.07 *
+ * EXTR_RESU                :       0.02 :       0.02 :       0.04 :       0.06 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.29 :       0.95 :       4.24 :       3.28 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.01 :       0.02 :       0.01 *
+ * AFFE_MODELE              :       0.15 :       0.50 :       0.65 :       0.18 *
+ * PROPA_FISS               :       2.20 :       0.57 :       2.77 :       2.29 *
+ * PROPA_FISS               :       2.31 :       0.47 :       2.78 :       2.25 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.01 *
+ * PROPA_FISS               :       2.11 :       1.00 :       3.11 :       2.19 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.02 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DETRUIRE                 :       0.00 :       0.00 :       0.00 :       0.00 *
+ * CALC_G                   :       3.26 :       0.93 :       4.19 :       3.23 *
+ * IMPR_TABLE               :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_TABLE               :       0.01 :       0.00 :       0.01 :       0.01 *
+ * MODI_MODELE_XFEM         :       0.58 :       0.54 :       1.12 :       0.64 *
+ * PROPA_FISS               :       2.32 :       0.91 :       3.23 :       2.27 *
+ * PROPA_FISS               :       2.26 :       0.94 :       3.20 :       2.26 *
+ *  . part Superviseur      :       2.93 :       0.64 :       3.57 :       5.59 *
+ * > 500 commandes...       :    9818.67 :    4816.14 :   14634.81 :    9007.36 *
+ *  . part Fortran          :   46764.02 :   24986.82 :   71750.84 :   42564.64 *
+ ********************************************************************************
+ * TOTAL_JOB                :   56585.62 :   29803.60 :   86389.22 :   51577.63 *
+ ********************************************************************************
+
+
+ <I>_EXIT_CODE = 1

@@ -1,0 +1,48 @@
+P profastk mbgnktc2@mbgnktc2-OptiPlex-9010:/home/mbgnktc2/Desktop/TEST_XCZM_MC/TEST.astk
+P serveur mbgnktc2-OptiPlex-9010
+P username mbgnktc2
+P aster_root /opt/aster
+P platform LINUX64
+P protocol_exec asrun.plugins.server.SSHServer
+P protocol_copyto asrun.plugins.server.SCPServer
+P protocol_copyfrom asrun.plugins.server.SCPServer
+P proxy_dir /tmp
+P noeud mbgnktc2-OptiPlex-9010
+P mclient mbgnktc2-OptiPlex-9010
+P uclient mbgnktc2
+P version Multi
+P lang en
+P debug nodebug
+P mode interactif
+P ncpus 7
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P classe 
+P depart 
+P after_job 
+P distrib 
+P exectool 
+P multiple 
+P nomjob TEST
+P origine ASTK 1.13.7
+P display mbgnktc2-OptiPlex-9010:0
+A args -max_base 100000
+A memjeveux 1750.0
+P mem_aster 100.0
+A tpmax 172800
+P memjob 14336000
+P tpsjob 2880
+P follow_output yes
+P nbmaxnook 5
+P cpresok RESNOOK
+P only_nook 
+P facmtps 1
+P corefilesize unlimited
+F comm /home/mbgnktc2/Desktop/TEST_XCZM_MC/Test2.comm D 1
+F mmed /home/mbgnktc2/Desktop/TEST_XCZM_MC/Double_crack.med D 20
+F mess /home/mbgnktc2/Desktop/TEST_XCZM_MC/messagestest.mess R 6
+F resu /home/mbgnktc2/Desktop/TEST_XCZM_MC/textresultstest.resu R 8
+F rmed /home/mbgnktc2/Desktop/TEST_XCZM_MC/visualresultstest1.rmed R 80
+P consbtc oui
+P soumbtc oui
+P actions make_etude

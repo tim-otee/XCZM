@@ -1,0 +1,91 @@
+                                                                                
+                                                                                
+             -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --             
+                                                                                
+                     Version 12.0.23 modifiée le 31/08/2016                     
+                     révision 1f0af493 - branche 'default'                      
+                         Copyright EDF R&D 1991 - 2016                          
+                                                                                
+                    Exécution du : Wed Oct 12 17:59:12 2016                     
+                   Nom de la machine : mbgnktc2-OptiPlex-9010                   
+                              Architecture : 64bit                              
+                          Type de processeur : x86_64                           
+                Système d'exploitation : Linux 3.13.0-85-generic                
+                        Langue des messages : en (UTF-8)                        
+                                                                                
+                           Version de Python : 2.7.6                            
+                            Version de NumPy : 1.8.2                            
+                           Parallélisme MPI : inactif                           
+                          Parallélisme OpenMP : actif                           
+                        Nombre de processus utilisés : 7                        
+                     Version de la librairie HDF5 : 1.8.10                      
+                      Version de la librairie MED : 3.0.8                       
+                     Version de la librairie MUMPS : 4.10.0                     
+                    Version de la librairie SCOTCH : 5.1.10                     
+                 Mémoire limite pour l'exécution : 13250.00 Mo                  
+                    consommée par l'initialisation : 0.00 Mo                    
+                  par les objets du jeu de commandes : 0.00 Mo                  
+                reste pour l'allocation dynamique : 12828.87 Mo                 
+                Taille limite des fichiers d'échange : 97.66 Go                 
+                                                                                
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (140.6) atteint une valeur supérieure à 50% du temps CPU (175.8). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (829.9) atteint une valeur supérieure à 50% du temps CPU (587.0). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 12/10/2016 A 18:07:32 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+            1            2  1.10000E-05            2  2.00000E+01  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.32223E-01
+  1.32223E-01
+  1.32223E-01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 12/10/2016 A 18:07:46 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  1.68754E-02 -4.15745E-03  2.29253E-04  1.93363E-07  4.37037E-01  2.90045E-08
+            1            2  1.10000E-05            2  2.00000E+01  8.43771E-03 -2.07873E-03  1.14627E-04  9.66815E-08  4.37037E-01  7.25111E-09
+
+
+ <I>_EXIT_CODE = 1

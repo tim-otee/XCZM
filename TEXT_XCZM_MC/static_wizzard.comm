@@ -1,0 +1,158 @@
+DEBUT(PAR_LOT ='NON',
+      CODE=_F(NIV_PUB_WEB='INTERNET',VISU_EFICAS='NON'),
+      IGNORE_ALARM=('SUPERVIS_22','SUPERVIS_1','XFEM_94'),); 
+
+# Material Properties
+young = 32.E3
+poiss = 0.2
+Gc = 0.003
+Sc = 2.8
+rho = 2.45E-9
+pena_lag = 2.*Sc*Sc/Gc
+pressures=pressured=0.1 #8.
+int_nb_cracks = 2
+S=0
+sl=[]
+
+#----------------------------------------------------------------------#
+#                 PHASE1 - LOADING for S just above Sc                 #
+#              other approach is to linearly extrapolate               #
+#----------------------------------------------------------------------#
+
+while (S <Sc):		
+	MAIL=LIRE_MAILLAGE(FORMAT='MED',);
+
+	MAIL = DEFI_GROUP(reuse =MAIL,
+		   MAILLAGE = MAIL,
+		   CREA_GROUP_MA = (
+			  _F(NOM = 'FACE_SUP', GROUP_MA = 'GM123'),
+			  _F(NOM = 'FACE_INF', GROUP_MA = 'GM124'),
+			  _F(NOM = 'FONDINI_0', GROUP_MA = 'GM125'),
+			  _F(NOM = 'FONDINI_1', GROUP_MA = 'GM125_1'),          
+			  _F(NOM = 'LIG_HAUT', GROUP_MA = 'GM126'),
+			  _F(NOM = 'LIG_LAT' , GROUP_MA = 'GM127'),
+			  _F(NOM = 'VOLUME' , GROUP_MA = 'GM128'),
+		   ),
+		   CREA_GROUP_NO = (
+			  _F(GROUP_MA = 'LIG_HAUT'),
+			  _F(GROUP_MA = 'LIG_LAT'),
+			  _F(NOM = 'c1' , GROUP_MA = 'FONDINI_0'),
+			  _F(NOM = 'c2' , GROUP_MA = 'FONDINI_1'),          
+			 )
+		   );
+
+	MA=DEFI_MATERIAU(ELAS = _F(E = young,
+									NU = poiss,
+									RHO = rho),
+										 );     
+
+	MAIL=MODI_MAILLAGE(reuse=MAIL,
+					   MAILLAGE=MAIL,
+					   ORIE_PEAU_3D=_F(GROUP_MA=('FACE_SUP','FACE_INF'),),
+					   );
+
+	MODE=AFFE_MODELE(MAILLAGE=MAIL,
+					 AFFE=_F(TOUT='OUI',
+							 PHENOMENE='MECANIQUE',
+							 MODELISATION='3D',),);
+
+	MATE=AFFE_MATERIAU(MAILLAGE=MAIL,
+					   AFFE=_F(TOUT='OUI',
+							   MATER=MA,),);
+
+
+
+	CHAR=AFFE_CHAR_MECA(MODELE=MODE,
+					  PRES_REP=(_F(GROUP_MA='FACE_INF',
+												 PRES=-pressures,),
+											  _F(GROUP_MA='FACE_SUP',
+												 PRES=-pressures,),),
+					  DDL_IMPO = (_F(GROUP_NO='LIG_HAUT', DY = 0.0, DZ = 0.0),
+											_F(GROUP_NO='LIG_LAT', DX = 0.0, DY = 0.0),),
+						);
+						
+	L_INST=DEFI_LIST_REEL(DEBUT=0.0,
+						  INTERVALLE=_F(JUSQU_A=1,NOMBRE=1,),);
+						  
+	DEFLIST =DEFI_LIST_INST(DEFI_LIST=_F(LIST_INST = L_INST,),)
+
+		 
+	RESU=STAT_NON_LINE(MODELE=MODE,
+					   CHAM_MATER=MATE,
+					   EXCIT=(_F(CHARGE=CHAR,),),
+					   COMPORTEMENT = (_F(RELATION = 'ELAS',),),
+					   INCREMENT=_F(LIST_INST=DEFLIST,
+					   ),);             
+					   
+
+	RESU=CALC_CHAMP(reuse=RESU,
+				   RESULTAT=RESU,
+				   CONTRAINTE=('SIGM_ELNO','SIGM_NOEU','SIGM_ELGA',),
+				   CRITERES=('SIEQ_ELNO','SIEQ_NOEU',),);
+				   
+	#IMPR_RESU(FORMAT='MED',
+ 	 #        RESU=_F(RESULTAT=RESU),);
+ 	         
+	#IMPR_RESU(FORMAT='RESULTAT',
+	#		  #UNITE=10,
+	#		  RESU=_F(RESULTAT=RESU,
+	#				  NOM_CHAM='SIGM_NOEU',
+	#				 # NOM_CMP=('SIXX','SIYY',),
+	#				  GROUP_NO=('c1'),
+	#				  IMPR_COOR='OUI',
+	#				  INST=1.0,
+	#				  ),);    
+					  
+	TAB_U=[None]*int_nb_cracks 
+	for r in range(int_nb_cracks):
+		R=r+1
+
+		TAB_U[r] = POST_RELEVE_T(ACTION = _F(INTITULE   = 'STRESS',
+									  RESULTAT   =  RESU,
+									  OPERATION  = 'MOYENNE_ARITH', # average
+									  NOM_CHAM   = 'SIGM_NOEU',
+									  TOUT_CMP= 'OUI',
+									 # NOM_CMP    = 'SIYY',
+									  GROUP_NO   = 'c%d'%R,
+									  INST=1.0,
+									 ),);
+		IMPR_TABLE(TABLE=TAB_U[r]);									 
+		tmp=TAB_U[r].EXTR_TABLE().values()
+		STRESS=tmp['MOYENNE'] #Print the average of the stress at the crack front
+		print STRESS
+		S=max(STRESS)	
+		sl.append(S) # List of max stresses reached at each step
+		#DETRUIRE(CONCEPT=_F(NOM=TAB_U),INFO=1);	
+		#DETRUIRE(CONCEPT=_F(NOM=STRESS),INFO=1);
+			
+	# Need to seperate each crack ... List of max(s)	
+	if(S <Sc) or (S > Sc):
+		DIFF = Sc/S
+		print DIFF
+		pressures=pressures*DIFF+(Sc/100) # Linearly extrapolates and adds 1%
+		pressured=pressures
+		
+	#print SIYY[0]
+	#tab1 = tab.EXTR_TABLE() # Convert table to python using PAR_LOT= 'NON'
+	
+	#print tab1
+	DETRUIRE(CONCEPT=_F(NOM=MA),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=MAIL),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=MODE),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=MATE),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=CHAR),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=L_INST),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=DEFLIST),INFO=1);
+	DETRUIRE(CONCEPT=_F(NOM=RESU),INFO=1);
+	for r in range(int_nb_cracks):	
+		DETRUIRE(CONCEPT=_F(NOM=TAB_U[r]),INFO=1);
+
+print 'All tested Stresses = '+str(sl)
+print ' '
+print 'Critical Loading = '+str(pressured-(Sc/percential))				
+print 'Super Critical Loading = '+str(pressured)
+print ' '
+for r in range(int_nb_cracks):
+	print 'Max stress reached crack_'+str(int_nb_cracks-r)+' = '+str(sl[-r-1])
+	
+FIN();

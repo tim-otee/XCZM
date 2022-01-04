@@ -1,0 +1,283 @@
+                                                                                
+                                                                                
+             -- CODE_ASTER -- VERSION : DÉVELOPPEMENT (unstable) --             
+                                                                                
+                     Version 12.0.23 modifiée le 31/08/2016                     
+                     révision 1f0af493 - branche 'default'                      
+                         Copyright EDF R&D 1991 - 2016                          
+                                                                                
+                    Exécution du : Thu Oct 13 00:58:57 2016                     
+                   Nom de la machine : mbgnktc2-OptiPlex-9010                   
+                              Architecture : 64bit                              
+                          Type de processeur : x86_64                           
+                Système d'exploitation : Linux 3.13.0-85-generic                
+                        Langue des messages : en (UTF-8)                        
+                                                                                
+                           Version de Python : 2.7.6                            
+                            Version de NumPy : 1.8.2                            
+                           Parallélisme MPI : inactif                           
+                          Parallélisme OpenMP : actif                           
+                        Nombre de processus utilisés : 7                        
+                     Version de la librairie HDF5 : 1.8.10                      
+                      Version de la librairie MED : 3.0.8                       
+                     Version de la librairie MUMPS : 4.10.0                     
+                    Version de la librairie SCOTCH : 5.1.10                     
+                  Mémoire limite pour l'exécution : 6250.00 Mo                  
+                    consommée par l'initialisation : 0.00 Mo                    
+                  par les objets du jeu de commandes : 0.00 Mo                  
+                 reste pour l'allocation dynamique : 5828.86 Mo                 
+                Taille limite des fichiers d'échange : 97.66 Go                 
+                                                                                
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (169.6) atteint une valeur supérieure à 50% du temps CPU (184.8). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (934.3) atteint une valeur supérieure à 50% du temps CPU (623.1). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.41658E+01
+  1.41658E+01
+  1.41658E+01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 01:08:37 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  8.96418E-01 -1.94719E-01 -3.25519E-03  5.38556E-04  3.94532E-01  8.07834E-05
+            1            2  1.10000E-05            2  2.00000E+01  4.48209E-01 -9.73596E-02 -1.62759E-03  2.69278E-04  3.94532E-01  2.01959E-05
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.1e-05
+#Crack advances                                                                  
+ CRACK0      
+  1.36415E+01
+  1.36415E+01
+  1.36415E+01
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 01:08:52 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.10000E-05            1  0.00000E+00  6.15696E-01 -1.35762E-01  1.46287E-03  2.54410E-04  3.99461E-01  3.81615E-05
+            1            2  1.10000E-05            2  2.00000E+01  3.07848E-01 -6.78808E-02  7.31436E-04  1.27205E-04  3.99461E-01  9.54037E-06
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (165.7) atteint une valeur supérieure à 50% du temps CPU (193.7). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1187.2) atteint une valeur supérieure à 50% du temps CPU (1323.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 01:29:47 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  7.58268E-01  5.19393E-02  2.65181E-02  3.66817E-04 -1.35525E-01  5.50225E-05
+            1            2  1.40000E-05            2  2.00000E+01  3.79134E-01  2.59696E-02  1.32591E-02  1.83408E-04 -1.35525E-01  1.37556E-05
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.4e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 01:29:58 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.40000E-05            1  0.00000E+00  5.95684E-01  1.39691E-01 -5.31949E-03  2.14631E-04 -4.20090E-01  3.21947E-05
+            1            2  1.40000E-05            2  2.00000E+01  2.97842E-01  6.98457E-02 -2.65974E-03  1.07316E-04 -4.20090E-01  8.04867E-06
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (169.0) atteint une valeur supérieure à 50% du temps CPU (194.4). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1370.8) atteint une valeur supérieure à 50% du temps CPU (2001.7). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 1.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  3.45813E+00
+  3.45813E+00
+  3.45813E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_0 CALCULE LE 13/10/2016 A 02:02:04 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  1.72645E-01  4.53693E-02  1.28100E-03  2.03948E-05 -4.59744E-01  3.05922E-06
+            1            2  1.70000E-05            2  2.00000E+01  8.63227E-02  2.26846E-02  6.40498E-04  1.01974E-05 -4.59744E-01  7.64805E-07
+
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_1
+# Time 1.7e-05
+#Crack advances                                                                  
+ CRACK0      
+  0.00000E+00
+  0.00000E+00
+  0.00000E+00
+
+#
+#--------------------------------------------------------------------------------
+#
+#ASTER 12.00.23 CONCEPT SIFF_1 CALCULE LE 13/10/2016 A 02:02:18 DE TYPE          
+#TABLE_SDASTER                                                                   
+ NUME_FOND    NUME_ORDRE   INST         NUM_PT       ABSC_CURV    K1           K2           K3           G            BETA         G_IRWIN     
+            1            2  1.70000E-05            1  0.00000E+00  6.50140E-01 -2.65775E-01  2.94137E-03  3.15731E-04  6.25434E-01  4.73596E-05
+            1            2  1.70000E-05            2  2.00000E+01  3.25070E-01 -1.32887E-01  1.47068E-03  1.57865E-04  6.25434E-01  1.18399E-05
+
+   
+   !----------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                      !
+   !                                                                                        !
+   ! Le temps CPU système (227.2) atteint une valeur supérieure à 50% du temps CPU (208.4). !
+   ! Ce comportement est peut-être anormal.                                                 !
+   !                                                                                        !
+   ! -> Conseil :                                                                           !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.       !
+   !                                                                                        !
+   !                                                                                        !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                         !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                 !
+   !----------------------------------------------------------------------------------------!
+   
+   
+   !------------------------------------------------------------------------------------------!
+   ! <A> <SUPERVIS_95>                                                                        !
+   !                                                                                          !
+   ! Le temps CPU système (1765.8) atteint une valeur supérieure à 50% du temps CPU (2726.4). !
+   ! Ce comportement est peut-être anormal.                                                   !
+   !                                                                                          !
+   ! -> Conseil :                                                                             !
+   !    Augmenter la quantité de mémoire peut permettre de diminuer le temps système.         !
+   !                                                                                          !
+   !                                                                                          !
+   ! Ceci est une alarme. Si vous ne comprenez pas le sens de cette                           !
+   ! alarme, vous pouvez obtenir des résultats inattendus !                                   !
+   !------------------------------------------------------------------------------------------!
+   
+#
+#--------------------------------------------------------------------------------
+#
+# CRACK_0
+# Time 2e-05
+#Crack advances                                                                  
+ CRACK0      
+  5.02406E+00
+  5.02405E+00
+  5.02406E+00
+
+
+ <I>_EXIT_CODE = 134

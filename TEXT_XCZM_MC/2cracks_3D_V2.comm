@@ -1,0 +1,698 @@
+###############################################################
+'''    This is for multiple cracks in a 3D-XCZM plate       '''
+''' Only change 'Adustable Parameters ... with care please  '''
+###############################################################
+
+DEBUT(CODE=_F(NIV_PUB_WEB='INTERNET',VISU_EFICAS='NON'),);
+
+
+#                       Adjustable Parameters                 
+#-----------------------------------------------------------------------
+
+# Material Properties
+
+young = 32.E3
+poiss = 0.2
+Gc = 0.003
+Sc = 2.8
+rho = 2.45E-9
+pena_lag = 2.*Sc*Sc/Gc
+
+#Applied Loadings
+pressures=6.
+pressured=6.
+
+# Quasi-static time steps DO NOT CHANGE!!!
+tdyn = 1.E-5
+nbpas = 1
+
+# Dynamic Calculation parameters
+nbcalc =4# Must align to number of instfin
+nbpady =1000 # Number of steps explicit 
+deltat = 2.e-8 # explicit step size
+nbpas_ar = 20 # Central differences method - divison for archiving, we are saving every nbpas_ar
+tfin = tdyn+nbpady*deltat # Final time
+deltar = (tfin-tdyn)/nbpas_ar #'Implicit' time steps, time stepping for storing
+#instfin = [tdyn+3.*(tfin-tdyn)/10.,tdyn+(tfin-tdyn)/2.,tfin] 
+instfin = [1.06e-5,1.12e-5,1.18e-5,tfin] # list of end of each dynamic computation 1.3e-5 MAX
+
+# Maximum Macro-crack extension for PROPA_FISS & theta field
+da_max=30.
+rsup=10.0
+rinf=5.0
+
+# Initial Crack Angle
+
+angle=0.     # The intial crack angle must match the on to be used in dynamic!
+nb_pts=2.    # Number of elements along crack front
+
+MA1 = LIRE_MAILLAGE(FORMAT='MED');
+
+MA =  COPIER(CONCEPT= MA1)
+
+# Defineing groups from mesh... Easier for transferable codes
+# for different meshes
+
+MA = DEFI_GROUP(reuse = MA,
+       MAILLAGE = MA,
+       CREA_GROUP_MA = (
+          _F(NOM = 'FACE_SUP', GROUP_MA = 'GM123'),
+          _F(NOM = 'FACE_INF', GROUP_MA = 'GM124'),
+          _F(NOM = 'FONDINI', GROUP_MA = 'GM125'),
+          _F(NOM = 'FONDINI_1', GROUP_MA = 'GM125_1'),          
+          _F(NOM = 'LIG_HAUT', GROUP_MA = 'GM126'),
+          _F(NOM = 'LIG_LAT' , GROUP_MA = 'GM127'),
+          _F(NOM = 'VOLUME' , GROUP_MA = 'GM128'),
+       ),
+       CREA_GROUP_NO = (
+          _F(GROUP_MA = 'LIG_HAUT'),
+          _F(GROUP_MA = 'LIG_LAT'),
+         )
+       );
+
+MO = AFFE_MODELE(
+       MAILLAGE = MA,
+       AFFE =
+         _F(
+           GROUP_MA     = ('VOLUME','FACE_SUP','FACE_INF'),
+           PHENOMENE    = 'MECANIQUE',
+           MODELISATION = '3D'),
+         );
+
+###---------------------------------------------------------###
+###                Crack properties - Crack 1               ###
+###---------------------------------------------------------###
+
+# Table for intial propagation
+
+SIFIN=CREA_TABLE(LISTE=(_F(LISTE_R=(0.,1.),PARA='ABSC_CURV'),
+                        _F(LISTE_R=(1.,1.),PARA='K1'),
+                        _F(LISTE_R=(0.,0.),PARA='K2'),
+                        _F(LISTE_R=(0.,0.),PARA='K3'),
+                        _F(LISTE_R=(1.,1.),PARA='G'),
+                        _F(LISTE_R=(angle,angle),PARA='BETA'),
+                        _F(LISTE_R=(1.,1.),PARA='G_IRWIN'),
+                        _F(LISTE_I=(1,1),PARA='NUME_FOND'),
+                        _F(LISTE_I=(1,1),PARA='NUME_ORDRE'),
+                        _F(LISTE_I=(1,2),PARA='NUM_PT'),));
+
+# Defintiation of Intial crack/notch
+
+FISIN=DEFI_FISS_XFEM(MODELE=MO,
+                     TYPE_DISCONTINUITE='COHESIF',
+                     DEFI_FISS=_F(FORM_FISS = 'DEMI_PLAN',
+                                  PFON      =(0. , 50., 0.),
+                                  NORMALE   =(0. , 0., 1.),
+                                  DTAN      =(0. , 1., 0.),
+                                  FRONT_INI  = 'FONDINI',),
+                     GROUP_MA_ENRI='VOLUME',
+                     );
+
+# Table of leftmost cracks
+
+FISS = [None]*nbcalc
+FISP = [None]*nbcalc
+
+
+'''
+# Intial PROPA_FISS via cohesive method
+                
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN,
+                      FISS_PROPAGEE=CO('FISQ'),
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN,),
+           DA_MAX=da_max,
+           INFO=1,);
+
+# Identify crack for intial dynamic propagation
+
+j=0
+               
+
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN,
+                      FISS_PROPAGEE=FISS[0],
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN,),
+           DA_MAX=da_max,
+           INFO=1,);
+'''
+###---------------------------------------------------------###
+###                    Defining Material                    ###
+###---------------------------------------------------------###
+
+BETON = DEFI_MATERIAU(ELAS = _F(E = young,
+                                NU = poiss,
+                                RHO = rho),
+                      RUPT_FRAG = _F(GC = Gc,
+                                     SIGM_C = Sc,
+                                     PENA_LAGR=pena_lag,
+                                     ),
+                      );
+
+###---------------------------------------------------------###
+###                    Crack properies                      ###
+###---------------------------------------------------------###
+
+# Loading ramp funtcion - QUASI-STATIC
+
+TRACT_T=DEFI_FONCTION(NOM_PARA='INST',
+    	              VALE= (0.  , 0.,
+                             tdyn, 1.),
+                      PROL_DROITE='LINEAIRE',
+                      PROL_GAUCHE='LINEAIRE'
+                      );
+
+# INST list - INTIAL QUASI-STATIC
+
+INSTANTS = DEFI_LIST_REEL(DEBUT = 0.,
+                          INTERVALLE = (_F(JUSQU_A = tdyn, #tdyn = time where dynamic starts
+                                           NOMBRE = nbpas),), #nbpas = 1
+                          );
+
+# ARCHIVING LIST  - INITIAL QUASI-STATIC
+# basically the same as the above
+
+INS_ARCH = DEFI_LIST_REEL(DEBUT = 0.,
+                          INTERVALLE = (_F(JUSQU_A =  tdyn, 
+                                           NOMBRE = nbpas),),
+                          );
+
+# Ramp function for dynamic and static propagation until tfin
+
+TRACT_X=DEFI_FONCTION(NOM_PARA='INST',
+    	                VALE= (0.  , 0.,
+                             tdyn, 1.,
+                             tfin, 1.),
+                      PROL_DROITE='LINEAIRE',
+                      PROL_GAUCHE='LINEAIRE'
+                      );
+
+# INST LIST QUASI-STATIC & DYNAMIC
+
+INSTANTX = DEFI_LIST_REEL(DEBUT = 0.,
+                          INTERVALLE = (_F(JUSQU_A = tdyn, 
+                                           NOMBRE = nbpas),
+                                        _F(JUSQU_A = tfin,
+                                           NOMBRE = nbpady,),),
+                          );
+                          
+# ARCHIVING LIST - QUASI-STATIC & DYNAMIC
+
+INS_ARCX = DEFI_LIST_REEL(DEBUT = 0.,
+                          INTERVALLE = (_F(JUSQU_A =  tdyn, 
+                                           NOMBRE = nbpas),
+                                        _F(JUSQU_A = tfin,
+                                           NOMBRE = nbpas_ar,),),
+                          );
+# archiving times list, except for last time step                          
+INS_AR = DEFI_LIST_REEL(DEBUT = tdyn+deltar,
+                        INTERVALLE = (_F(JUSQU_A = tfin,
+                                         NOMBRE = nbpas_ar-1,),),
+                        );
+
+# Lists for propagation loop
+
+###---------------------------------------------------------###
+###                Crack properies - Crack 2                ###
+###---------------------------------------------------------###
+
+# Table for intial propagation
+
+SIFIN2=CREA_TABLE(LISTE=(_F(LISTE_R=(0.,1.),PARA='ABSC_CURV'),
+                        _F(LISTE_R=(1.,1.),PARA='K1'),
+                        _F(LISTE_R=(0.,0.),PARA='K2'),
+                        _F(LISTE_R=(0.,0.),PARA='K3'),
+                        _F(LISTE_R=(1.,1.),PARA='G'),
+                        _F(LISTE_R=(angle,angle),PARA='BETA'),
+                        _F(LISTE_R=(1.,1.),PARA='G_IRWIN'),
+                        _F(LISTE_I=(1,1),PARA='NUME_FOND'),
+                        _F(LISTE_I=(1,1),PARA='NUME_ORDRE'),
+                        _F(LISTE_I=(1,2),PARA='NUM_PT'),));
+
+# Defintiation of Intial crack/notch
+
+FISIN2=DEFI_FISS_XFEM(MODELE=MO,
+                     TYPE_DISCONTINUITE='COHESIF',
+                     DEFI_FISS=_F(FORM_FISS = 'DEMI_PLAN',
+                                  PFON      =(0. , 150., 0.),
+                                  NORMALE   =(0. , 0., 1.),
+                                  DTAN      =(0. , -1., 0.),
+                                  FRONT_INI  = 'FONDINI_1',),
+                     GROUP_MA_ENRI='VOLUME',
+                     );
+
+# Table of cracks
+
+FISS2 = [None]*nbcalc
+FISP2 = [None]*nbcalc
+
+# Intial PROPA_FISS via cohesive method
+# FISQ is for quasi statics
+                
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN,
+                      FISS_PROPAGEE=CO('FISQ'),
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN,),
+           DA_MAX=da_max,
+           INFO=1,);
+
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN2,
+                      FISS_PROPAGEE=CO('FISQ2'),
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN2,),
+           DA_MAX=da_max,
+           INFO=1,);
+
+# Identify crack for intial dynamic propagation
+
+j=0
+FISS[0] = CO('FISS_%d'%j) 
+FISS2[0] = CO('FISS2_%d'%j)   
+
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN,
+                      FISS_PROPAGEE=FISS[0],
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN,),
+           DA_MAX=da_max,
+           INFO=1,);
+# split for data structure, to avoid a fake enriched model
+PROPA_FISS(MODELE=MO,
+           METHODE_PROPA='COHESIVE',
+           CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+           ZONE_MAJ='TOUT',
+           TEST_MAIL='NON',
+           FISSURE=_F(FISS_ACTUELLE=FISIN2,
+                      FISS_PROPAGEE=FISS2[0],
+                      NB_POINT_FOND=nb_pts,
+                      TABLE=SIFIN2,),    
+           DA_MAX=da_max,
+           INFO=1,);
+    
+###---------------------------------------------------------###
+###     FOR LOOP FOR PROPAGATION - CAUTION about editing    ###
+###---------------------------------------------------------###
+
+EVOL = [None]*nbcalc
+RIGID = [None]*nbcalc
+TRACTI = [None]*nbcalc
+CHAMPM = [None]*nbcalc
+SIF = [None]*nbcalc
+MODX = [None]*nbcalc
+SIF2 = [None]*nbcalc
+
+ 
+for i in range(nbcalc):
+
+    ###---------------------------------------------------------###
+    ###                   Quasi-static crack                    ###
+    ###---------------------------------------------------------###
+
+    # Modify model for new Crack FISQ, for use in quasi statics
+    # FISQ is necessary cause data structure is enriched if CONTACT='OUI'
+    # and that would cause the dynamic code to crash if we were to reuse the same object
+    
+    MODK=MODI_MODELE_XFEM(MODELE_IN=MO,
+                          FISSURE=(FISQ,FISQ2), #
+                          CONTACT='OUI',
+                          );
+
+    # Defining contact for new model 
+    
+    CTX = DEFI_CONTACT(MODELE         = MODK,
+                       FORMULATION    = 'XFEM',
+                       FROTTEMENT     = 'SANS',
+                       ITER_CONT_MAXI = 3,
+                       ZONE=(_F(INTEGRATION='GAUSS',
+                                ORDRE_INT=4,
+                                ALGO_CONT='CZM',
+                                FISS_MAIT = FISQ,
+                                ALGO_LAGR='VERSION2',
+                                RELATION='CZM_LIN_REG',
+						        ),
+						    _F(INTEGRATION='GAUSS', # Doubled
+                                ORDRE_INT=4,
+                                ALGO_CONT='CZM',
+                                FISS_MAIT = FISQ2,
+                                ALGO_LAGR='VERSION2',
+                                RELATION='CZM_LIN_REG',
+						        )   
+                       ));
+
+    # Applying material to model
+    
+    CHAMPMA=AFFE_MATERIAU(MAILLAGE=MA,
+                          MODELE=MODK,
+                          AFFE=(_F(GROUP_MA='VOLUME',MATER=BETON),
+                                   ),
+                          );
+
+    # BC's for Rigid body
+    
+    RIGIDE = AFFE_CHAR_MECA(MODELE   = MODK,
+                            DDL_IMPO = (_F(GROUP_NO='LIG_HAUT', DY = 0.0, DZ = 0.0),
+                                        _F(GROUP_NO='LIG_LAT', DX = 0.0, DY = 0.0),
+                                       ),
+                           );
+                           
+    
+    TRACTION = AFFE_CHAR_MECA(MODELE = MODK,
+                               PRES_REP=(_F(GROUP_MA='FACE_INF',
+                                             PRES=-pressures,),
+                                          _F(GROUP_MA='FACE_SUP',
+                                             PRES=-pressures,),
+                                        ),     
+               );
+
+    # STAT_NON_LINE intial
+ 
+    EVOL[i] = STAT_NON_LINE(MODELE = MODK,
+                            CHAM_MATER = CHAMPMA,
+                            CONTACT = CTX,
+                            EXCIT = (_F(CHARGE = RIGIDE),
+                                     _F(CHARGE = TRACTION,
+                                        FONC_MULT = TRACT_T),
+                                     ),
+                            COMPORTEMENT = (_F(RELATION = 'ELAS', 
+                                               GROUP_MA = 'VOLUME'),
+                                           ),
+                            INCREMENT = _F(LIST_INST = INSTANTS,
+                                           INST_FIN = tdyn,
+                                           PRECISION=1.E-9,),
+                            NEWTON  = _F(REAC_ITER = 1),
+                            CONVERGENCE = _F(RESI_GLOB_RELA = 1.E-6,
+                                             ITER_GLOB_MAXI = 10),
+                            SOLVEUR    = _F(METHODE = 'MUMPS',
+                                            NPREC=-1,),
+                            ARCHIVAGE = _F(LIST_INST = INS_ARCH,
+                                           PRECISION=1.E-9,
+                                           CHAM_EXCLU='VARI_ELGA'
+                                           )
+                            );
+
+    # Create field from previous propgation to project
+    
+    CH1= CREA_CHAMP (OPERATION= 'EXTR',
+                     TYPE_CHAM='NOEU_DEPL_R',
+                     RESULTAT= EVOL[i], 
+                     NOM_CHAM= 'DEPL',
+                     PRECISION = 1.E-9,
+                     INST = tdyn);
+
+    CH2= CREA_CHAMP (OPERATION= 'EXTR' ,
+                     TYPE_CHAM='ELGA_SIEF_R',
+                     RESULTAT= EVOL[i],
+                     NOM_CHAM= 'SIEF_ELGA',
+                     PRECISION = 1.E-9,
+                     INST = tdyn);
+
+    ###---------------------------------------------------------###
+    ###                      Dynamic crack                      ###
+    ###---------------------------------------------------------###    
+
+    # Without contact with X-FEM
+    
+    MODX[i]=MODI_MODELE_XFEM(MODELE_IN=MO,
+                             FISSURE=(FISS[i],FISS2[i]),
+                             CONTACT='NON',
+                             );
+
+    # New model - Asign material (if new)?
+    
+    CHAMPM[i]=AFFE_MATERIAU(MAILLAGE=MA,
+                             MODELE=MODX[i],
+                             AFFE=(_F(GROUP_MA='VOLUME',MATER=BETON),
+                                   ),
+                             );
+
+    # New model - BC's Rigid body 
+    RIGID[i] = AFFE_CHAR_MECA(MODELE   = MODX[i],
+                               DDL_IMPO = (_F(GROUP_NO='LIG_HAUT', DY = 0.0, DZ = 0.0),
+                                           _F(GROUP_NO='LIG_LAT', DX = 0.0,  DY = 0.0),
+                                           ),
+                               );
+
+    # New model - Applying loadings
+
+    TRACTI[i] = AFFE_CHAR_MECA(MODELE = MODX[i],
+                                # FORCE_FACE = (_F(GROUP_MA = 'FACE_SUP', FZ = fzi),
+                                 #              _F(GROUP_MA = 'FACE_INF', FZ = -fzi),
+                                 #),
+                                  PRES_REP=(_F(GROUP_MA='FACE_INF',
+                                             PRES=-pressured,),
+                                          _F(GROUP_MA='FACE_SUP',
+                                             PRES=-pressured,),
+                                                             ),  
+                  );
+
+    # Applying dynamic calculation 
+    # IF statement dictates count up until nbcalc (number of calculations)
+    
+    if(i!=(nbcalc-1)):
+       EVOL[i]=DYNA_NON_LINE(reuse=EVOL[i],
+                             ETAT_INIT  = _F(DEPL = CH1, SIGM=CH2,),
+                             MODELE     = MODX[i],
+                             CHAM_MATER = CHAMPM[i],
+                             MASS_DIAG  = 'OUI',
+                             EXCIT      = (_F(CHARGE = RIGID[i]),
+                                           _F(CHARGE = TRACTI[i],
+                                              FONC_MULT = TRACT_X),
+                                           ),
+                            COMPORTEMENT = (_F(RELATION = 'ELAS', 
+                                               GROUP_MA = 'VOLUME'),
+                                           ),
+                            INCREMENT  = _F(LIST_INST = INSTANTX,
+                                            INST_INIT = tdyn,
+                                            INST_FIN = instfin[i],
+                                            PRECISION = 1.E-9),
+                            SCHEMA_TEMPS=_F(SCHEMA='DIFF_CENT',
+                                            FORMULATION='ACCELERATION',
+                                            STOP_CFL = 'NON'),
+                            CONVERGENCE= _F(ITER_GLOB_MAXI = 50),
+                            NEWTON     = _F(MATRICE = 'TANGENTE',
+                                            REAC_ITER=1),
+                            ARCHIVAGE = _F(INST = instfin[i],
+                                           PRECISION=1.E-9,)
+                            );
+                            
+       # Restrict to result (recover)
+        
+       EVOL[i] = EXTR_RESU(reuse=EVOL[i],
+                           RESULTAT=EVOL[i],
+                           ARCHIVAGE=_F(INST=instfin[i],
+                                        PRECISION=1.E-9),
+                          );
+                                        
+    if(i==(nbcalc-1)):
+       EVOL[i]=DYNA_NON_LINE(reuse=EVOL[i],
+                             ETAT_INIT  = _F(DEPL = CH1, SIGM=CH2,),
+                             MODELE     = MODX[i],
+                             CHAM_MATER = CHAMPM[i],
+                             MASS_DIAG  = 'OUI',
+                             EXCIT      = (_F(CHARGE = RIGID[i]),
+                                           _F(CHARGE = TRACTI[i],
+                                              FONC_MULT = TRACT_X),
+                                           ),
+                            COMPORTEMENT = (_F(RELATION = 'ELAS', 
+                                               GROUP_MA = 'VOLUME'),
+                                           ),
+                            INCREMENT  = _F(LIST_INST = INSTANTX,
+                                            INST_INIT = tdyn,
+                                            INST_FIN = instfin[i],
+                                            PRECISION = 1.E-9),
+                            SCHEMA_TEMPS=_F(SCHEMA='DIFF_CENT',
+                                            FORMULATION='ACCELERATION',
+                                            STOP_CFL = 'NON'),
+                            CONVERGENCE= _F(ITER_GLOB_MAXI = 50),
+                            NEWTON     = _F(MATRICE = 'TANGENTE',
+                                            REAC_ITER=1),
+                            ARCHIVAGE = _F(LIST_INST = INS_AR,
+                                           PRECISION=1.E-9,
+                                           CHAM_EXCLU='VARI_ELGA')
+                            );
+                            
+        # Restrict to result (recover)
+        
+       EVOL[i] = EXTR_RESU(reuse=EVOL[i],
+                           RESULTAT=EVOL[i],
+                           ARCHIVAGE=_F(LIST_INST = INS_AR,
+                                        PRECISION=1.E-7,));
+                                        
+    # define crack on dectect parameters in table above
+    
+    if(i!=(nbcalc-1)) :
+        FISP[i] = CO('FISP_%d'%i)
+        FISP2[i] = CO('FISP2_%d'%i) # doubled
+        if(i==0):
+            PROPA_FISS(MODELE=MODX[i],
+                       METHODE_PROPA='DETECTION',
+                       RESULTAT=EVOL[i],
+                       ZONE_MAJ='TOUT',
+                       TEST_MAIL='NON',
+                       FISSURE=(_F(FISS_ACTUELLE=FISS[i],
+                                  FISS_PROPAGEE=FISP[i],
+                                  NB_POINT_FOND=nb_pts,
+                                  TABLE=SIFIN,),
+                                  
+                               _F(FISS_ACTUELLE=FISS2[i],
+                                  FISS_PROPAGEE=FISP2[i], # doubled 
+                                  NB_POINT_FOND=nb_pts,
+                                  TABLE=SIFIN2,),),
+                       INFO=1,);
+        if(i!=0):
+            PROPA_FISS(MODELE=MODX[i],
+                       METHODE_PROPA='DETECTION',
+                       RESULTAT=EVOL[i],
+                       ZONE_MAJ='TOUT',
+                       TEST_MAIL='NON',
+                       FISSURE=(_F(FISS_ACTUELLE=FISS[i],
+                                  FISS_PROPAGEE=FISP[i],
+                                  NB_POINT_FOND=nb_pts,
+                                  TABLE=SIF[i-1],),
+                                  
+                               _F(FISS_ACTUELLE=FISS2[i], # doubled 
+                                  FISS_PROPAGEE=FISP2[i],
+                                  NB_POINT_FOND=nb_pts,
+                                  TABLE=SIF2[i-1],),), 
+                       INFO=1,);
+        #
+        # Calculate G from K1_K2_K3 cohezive and define next crack
+
+        SIF[i]=CALC_G(RESULTAT=EVOL[i],
+                      OPTION='K_G_COHE',
+                      INST=instfin[i],
+                      THETA=_F(FISSURE=FISP[i],NUME_FOND=1,NB_POINT_FOND=nb_pts,R_SUP=rsup,R_INF=rinf), # R_INF is a dummy value, not used for cohesive
+                      LISSAGE=_F(LISSAGE_THETA='LAGRANGE',
+                                 LISSAGE_G='LAGRANGE_NO_NO',),);
+        IMPR_TABLE(TABLE=SIF[i],UNITE=6,);
+        
+        
+        SIF2[i]=CALC_G(RESULTAT=EVOL[i], # doubled 
+                      OPTION='K_G_COHE',
+                      INST=instfin[i],
+                      THETA=_F(FISSURE=FISP2[i],NUME_FOND=1,NB_POINT_FOND=nb_pts,R_SUP=rsup,R_INF=rinf),
+                      LISSAGE=_F(LISSAGE_THETA='LAGRANGE',
+                                 LISSAGE_G='LAGRANGE_NO_NO',),);
+        IMPR_TABLE(TABLE=SIF2[i],UNITE=6,);       
+                
+#
+        # propably, concatenate it into one command
+        # dummy model to get past the commamd
+        DUMMOD=MODI_MODELE_XFEM(MODELE_IN=MO,
+                                FISSURE=(FISP[i],FISP2[i]),
+                                CONTACT='NON',
+                                );
+        FISS[i+1] = CO('FISS_%d'%(i+1))
+        FISS2[i+1] = CO('FISS2_%d'%(i+1))
+        PROPA_FISS(MODELE=DUMMOD,
+                   METHODE_PROPA='COHESIVE',
+                   CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+                   ZONE_MAJ='TOUT',
+                   TEST_MAIL='NON',
+                   FISSURE=(_F(FISS_ACTUELLE=FISP[i],
+                               FISS_PROPAGEE=FISS[i+1],
+                               NB_POINT_FOND=nb_pts,
+                               TABLE=SIF[i],),
+                            _F(FISS_ACTUELLE=FISP2[i],
+                               FISS_PROPAGEE=FISS2[i+1],
+                               NB_POINT_FOND=nb_pts,
+                               TABLE=SIF[i],),),
+                   DA_MAX=da_max,
+                   INFO=1,);                  
+               
+        DETRUIRE(CONCEPT=_F(NOM=FISQ),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=FISQ2),INFO=1);
+        # doing the same as above to get the quasi satic crack
+        # to be studied when refactoring if we can get rid of these FISQ
+        PROPA_FISS(MODELE=DUMMOD,
+                   METHODE_PROPA='COHESIVE',
+                   CRIT_ANGL_BIFURCATION='ANGLE_IMPO',
+                   ZONE_MAJ='TOUT',
+                   TEST_MAIL='NON',
+                   FISSURE=(_F(FISS_ACTUELLE=FISP[i],
+                              FISS_PROPAGEE=CO('FISQ'),
+                              NB_POINT_FOND=nb_pts,
+                              TABLE=SIF[i],),
+                            _F(FISS_ACTUELLE=FISP2[i],
+                              FISS_PROPAGEE=CO('FISQ2'),
+                              NB_POINT_FOND=nb_pts,
+                              TABLE=SIF2[i],),), 
+                   DA_MAX=da_max,
+                   INFO=1,);
+
+        # Clear concept names
+        DETRUIRE(CONCEPT=_F(NOM=CH1),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=CH2),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=MODK),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=CTX),INFO=1);      
+        DETRUIRE(CONCEPT=_F(NOM=CHAMPMA),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=RIGIDE),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=TRACTION),INFO=1);
+        DETRUIRE(CONCEPT=_F(NOM=DUMMOD),INFO=1);
+###---------------------------------------------------------###
+###                     Post Processing                     ###
+###---------------------------------------------------------###
+
+# recovering level sets (numbering)
+
+MA_XFEM=POST_MAIL_XFEM(MODELE=MODX[nbcalc-1]);
+
+# Create model
+
+MOD_VISU=AFFE_MODELE(MAILLAGE=MA_XFEM,
+                     AFFE=_F(TOUT='OUI',
+                             PHENOMENE='MECANIQUE',
+                             MODELISATION='3D'));
+                             
+# process and calculate results fields
+
+RESXFEM1=POST_CHAM_XFEM(RESULTAT=EVOL[nbcalc-1],
+                        MODELE_VISU=MOD_VISU);
+                        
+RESXFEM1=CALC_CHAMP(reuse=RESXFEM1,
+                    RESULTAT=RESXFEM1,
+                    CONTRAINTE='SIGM_NOEU',
+                    CRITERES=('SIEQ_ELGA','SIEQ_ELNO'))
+
+# Print results
+                        
+IMPR_RESU(FORMAT='MED',
+          RESU=_F(RESULTAT=RESXFEM1),);
+
+'''      
+
+# Energy Balance 
+
+ENER_POT=POST_ELEM(ENER_TOTALE=_F(TOUT='OUI',),
+                   RESULTAT=RESXFEM1,
+                   );
+
+IMPR_TABLE(TABLE=ENER_POT,
+       UNITE=8,);
+'''                 
+FIN();
+
